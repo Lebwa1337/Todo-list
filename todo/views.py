@@ -2,6 +2,7 @@ from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
 from django.views.generic import CreateView
 
+from todo.forms import TaskForm
 from todo.models import Task
 
 
@@ -13,4 +14,4 @@ def index(request: HttpRequest) -> HttpResponse:
 class TaskCreateView(CreateView):
     model = Task
     template_name = 'todo/task_form.html'
-    fields = "__all__"
+    form_class = TaskForm
