@@ -15,6 +15,8 @@ class Task(models.Model):
     status = models.BooleanField(default=False)
     tag = models.ForeignKey(Tag, on_delete=models.CASCADE, related_name='tasks')
 
+    class Meta:
+        ordering = ["status"]
+
     def __str__(self):
         return self.content
-
