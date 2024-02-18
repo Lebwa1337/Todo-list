@@ -21,6 +21,8 @@
         {% endif %}
         <br>
         <span>Tags: {{ task.tag }}</span>
+        <br>
+        <a href="{% url 'todo:task-update' pk=task.id %}">Update</a>
       </div>
     </div>
   {% endfor %}
