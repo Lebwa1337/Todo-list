@@ -4,7 +4,7 @@ from todo.models import Task
 
 
 class TaskForm(forms.ModelForm):
-    deadline = forms.DateTimeField(widget=forms.DateInput(attrs={'type': 'time'}))
+    deadline = forms.DateTimeField(widget=forms.DateTimeInput(attrs={'type': 'datetime-local'}))
 
     class Meta:
         model = Task
