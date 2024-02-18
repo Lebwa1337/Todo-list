@@ -33,3 +33,10 @@ class TagCreateView(generic.CreateView):
 
     def get_success_url(self) -> str:
         return reverse('todo:tag-list')
+
+
+class TagUpdateView(generic.UpdateView):
+    model = Tag
+    template_name = 'todo/tag_form.html'
+    fields = "__all__"
+    success_url = reverse_lazy('todo:tag-list')
