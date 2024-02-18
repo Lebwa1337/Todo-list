@@ -10,9 +10,15 @@
         <h5><strong>{{ task }}</strong>
           {% if not task.status %}
             <span class="text-danger">Not done</span>
+            {% else %}
+            <span class="text-success">Done</span>
           {% endif %}
         </h5>
-        <a href="" class="btn btn-success ml-auto">Complete</a>
+        {% if not task.status %}
+          <a href="{% url 'todo:complete-task' pk=task.id %}" class="btn btn-success ml-auto">Complete</a>
+      	{% else %}
+          <a href="{% url 'todo:complete-task' pk=task.id %}" class="btn btn-secondary ml-auto">Undo</a>
+        {% endif %}
       </div>
       <div class="card-footer">
         <span>Created: {{ task.datetime }}</span>
