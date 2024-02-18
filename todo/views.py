@@ -37,7 +37,6 @@ def complete_task(request: HttpRequest, pk: int) -> HttpResponse:
 
 class TagListView(generic.ListView):
     model = Tag
-    template_name = 'todo/tag_list.html'
 
 
 class TagCreateView(generic.CreateView):
